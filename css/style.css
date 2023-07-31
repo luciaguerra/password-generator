@@ -1,44 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
 :root {
-    --blue: #202938;
-    --cyan: #10B982;
-    --darkBlue: #263548;
+    --background-color: #202938;
+    --primary-color: #10B982;
+    --neutral-color: #263548;
+    --font-color: #dcdcdc;
+
+    font-size: 16px;
 }
 
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--blue);
+    background-color: var(--background-color);
 
 }
 
 body, main {
+    min-height: 100vh;
+}
+
+body, .line {
     width: 100%;
-    display: flex;
+}
+
+body, main, .line {
     justify-content: center;
     align-items: center;
-
 }
 
-h1 {
-    font-size: 1.75rem;
-    line-height: 1.2;
+body, main, .line, .password-buttons {
+    display: flex;
 }
 
-span {
-    color: var(--cyan);
-}
-
-p {
-    font-size: 0.85em;
-    color: gainsboro;
-    margin: 0.5rem;
-    padding: 0.2rem;
-}
 
 body, button {
     font-family: 'Poppins', sans-serif;
@@ -46,17 +44,31 @@ body, button {
 }
 
 main {
-    height: 100vh;
-    max-width: 900px;
-    min-width: 300px;
+    width: 90%;
+    min-width: 80%;
     flex-direction: column;
 }
 
 
+h1 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+}
+
+span {
+    color: var(--primary-color);
+}
+
+p {
+    font-size: 0.85rem;
+    color: var(--font-color);
+    margin: 0.6rem 0;
+}
+
 button {
     border: none;
     padding: 0.4rem 0.85rem;
-    background-color: var(--cyan);
+    background-color: var(--primary-color);
     cursor: pointer;
 }
 
@@ -68,30 +80,50 @@ button, #password-one, #password-two {
     border-radius: 0.5rem;
 }
 
-
 button, .line {
     margin: 0.8rem 0;
 }
 
+.info {
+    min-width: 23%;
+    max-width: 90%;
+}
+
 .line {
-    width: 60%;
     height: 0.1rem;
-    max-width: 300px;
     background-color: rgba(220, 220, 220, 0.147);
 }
 
 .password-buttons {
-    display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 #password-one, #password-two {
-    background-color: var(--darkBlue);
+    background-color: var(--neutral-color);
     width: 8rem;
-    height: 1.5rem;
-    margin: 0.5rem;
+    height: 2rem;
+    margin: auto;
+    padding: 0.5rem 0;
     text-align: center;
     font-size: 0.8rem;
-    vertical-align: center;
-    color: var(--cyan);
+    color: var(--primary-color);
+}
+
+@media screen and (max-width: 420px) {
+    main {
+        padding: 1.5rem;
+    }
+
+    article > div {
+        margin: 0.4rem 0;
+    }
+
+    .password-buttons {
+        flex-direction: column;
+    }
+
+    #password-one, #password-two {
+        width: 100%;
+    }
 }

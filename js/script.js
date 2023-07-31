@@ -13,7 +13,6 @@ function generatePasswordOne(){
         let randomIndexOne = Math.floor(Math.random() * characters.length);
         pwOne += characters[randomIndexOne];
     }
-
     return pwOne;
 }
 
@@ -22,7 +21,6 @@ function generatePasswordTwo(){
         let randomIndexTwo = Math.floor(Math.random() * characters.length);
         pwTwo += characters[randomIndexTwo];
     }
-
     return pwTwo;
 }
 
